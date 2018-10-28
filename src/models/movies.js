@@ -16,6 +16,18 @@ const url = 'https://ghibliapi.herokuapp.com/films'
   })
 };
 
+Movies.prototype.bindEvents = function () {
+  PubSub.subscribe('SelectView:change', (evt) => {
+    selectedIndex = evt.detail;
+    const selectedMovie = [];
+    selectedMovie.push(this.data[selectedIndex]);
+    PubSub.publish('Movies:selected-movie-ready', selectedMovie);
+    console.log(selectedMovie);
+  });
+};
+
+
+
 
 
 

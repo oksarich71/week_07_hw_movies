@@ -39,4 +39,6 @@ const title = document.createElement('h3');
 
 }
 
+
+
 module.exports = MovieView;
